@@ -27,7 +27,7 @@ int main(int argc, char * argv[])
 
 string utilityFunction(string s,int j)
 {
-    char* ret = new char[s.length()-1];
+    char* ret = new char[s.length()];
     int d = 0;
     for (int k = 0; k < s.length();k++){
         if (k == j)
@@ -35,7 +35,7 @@ string utilityFunction(string s,int j)
         else
             ret[k-d] = s[k];
     }
-    ret[s.length()-1] = '\0';
+    ret[s.length()] = '\0';
     string retStr(ret);
     delete [] ret;
     return retStr;
