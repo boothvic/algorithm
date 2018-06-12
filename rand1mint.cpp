@@ -14,7 +14,7 @@
 #include <cstdlib>
 using namespace std;
 
-const char* file = "/home/drlin/Workspace/Algorithm/out.txt";
+const char* file = "/home/drlin/Exp/algorithm/out.txt";
 bool out2file(int arr[])
 {
     ofstream fout(file,ios_base::out | ios_base::trunc);
@@ -27,7 +27,7 @@ bool out2file(int arr[])
     {
         fout << arr[i] << "\t";
         ++i;
-        if (i%10 == 0)
+        if (i%20 == 0)
             fout << endl;
     }
     fout.close();
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
     srand((unsigned)time(0));
     for (int i = 0; i < 1000000; ++i)
     {
-        arr[i] = rand()/1000;
+        arr[i] = rand()%1000;
     }
     if (!(out2file(arr)))
         cout << "Output file error!\n";
